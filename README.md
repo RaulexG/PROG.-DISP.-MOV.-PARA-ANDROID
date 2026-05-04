@@ -45,7 +45,32 @@ Aplicacion Android para administrar un cardex academico, registrar materias curs
 
 Ruta del proyecto: [E4.1CardexRoom](C:/PROG-DISP-MOV-PARA-ANDROID/E4.1CardexRoom)
 
-## Actualizacion reciente: A4.3 Cambios a CardexRoom
+### 3. Ej506API
+
+Aplicacion Android de conversion de monedas que consume datos en tiempo real desde una API publica para realizar conversiones entre `MXN`, `USD` y `EUR`.
+
+**Funciones principales**
+- Captura de cantidad a convertir.
+- Seleccion de moneda de origen y destino.
+- Consulta de tipos de cambio actualizados desde Frankfurter API.
+- Visualizacion del resultado convertido y fecha de actualizacion.
+- Validacion basica de entradas y manejo simple de errores.
+- Interfaz limpia y minimalista con Jetpack Compose.
+
+**Tecnologias utilizadas**
+- Kotlin
+- Jetpack Compose
+- Material 3
+- Coroutines
+- HTTP con `HttpURLConnection`
+- JSON con `JSONObject`
+- Frankfurter API
+
+Ruta del proyecto: [Ej506API](C:/PROG-DISP-MOV-PARA-ANDROID/Ej506API)
+
+## Actualizaciones recientes
+
+### A4.3 Cambios a CardexRoom
 
 Como parte de la actividad **A4.3 Cambios a CardexRoom**, se mejoro la relacion entre los filtros aplicados y la informacion mostrada en el resumen academico.
 
@@ -62,12 +87,31 @@ Como parte de la actividad **A4.3 Cambios a CardexRoom**, se mejoro la relacion 
 - La lista filtrada y el resumen academico ahora muestran informacion consistente en tiempo real.
 - La implementacion se realizo con `StateFlow` y `combine(...)` dentro del `ViewModel`, manteniendo una UI reactiva en Compose.
 
+### A4.4 Consumo de datos mediante APIs
+
+Como parte de la actividad **A4.4 Consumo de datos mediante APIs**, se agrego una aplicacion enfocada en el consumo de informacion externa en tiempo real.
+
+**Proposito**
+- Permitir la conversion sencilla entre peso mexicano, dolar estadounidense y euro usando una API publica.
+
+**Implementacion realizada**
+- Se utilizo **Frankfurter API** para consultar tipos de cambio sin necesidad de API key.
+- La app construye una solicitud HTTP al endpoint oficial y procesa la respuesta en formato JSON.
+- Se muestra en pantalla el monto convertido junto con la fecha de actualizacion de la tasa consultada.
+- Se consideraron casos basicos de error, como cantidades invalidas o fallos de conexion.
+
+**Resultado**
+- El proyecto incorpora consumo de APIs reales en Android.
+- Se reforzo el manejo de peticiones HTTP, lectura de JSON y validacion de entradas en Compose.
+- La app mantiene una experiencia simple, clara y facil de explicar en un contexto academico.
+
 ## Estructura del repositorio
 
 ```text
 PROG-DISP-MOV-PARA-ANDROID/
 |- 506E15Listadelmandado/
 |- E4.1CardexRoom/
+|- Ej506API/
 `- README.md
 ```
 
@@ -91,4 +135,3 @@ Este repositorio funciona como evidencia de aprendizaje de la materia, mostrando
 - **Raul Chavira Narvaez**
 - Grupo: `S8A`
 - Materia: `Programacion de Dispositivos Moviles para Android`
-
